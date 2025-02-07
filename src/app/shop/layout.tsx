@@ -11,11 +11,12 @@ const ShopLayout: FC<ProfileLayoutProps> = ({
   categories,
   productList,
 }) => {
+  console.log(children);
   return (
     <>
       <h1>/app/shop/layout.tsx 레이아웃</h1>
-      {categories}
-      {productList}
+      {/* {categories} */}
+      {/* {productList} */}
       {children}
     </>
   );
