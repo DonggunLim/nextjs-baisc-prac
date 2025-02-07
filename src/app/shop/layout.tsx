@@ -8,8 +8,8 @@ interface ProfileLayoutProps {
 
 const ShopLayout: FC<ProfileLayoutProps> = ({
   children,
-  categories,
-  productList,
+  // categories,
+  // productList,
 }) => {
   console.log(children);
   return (
