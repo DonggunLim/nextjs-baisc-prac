@@ -1,0 +1,14 @@
+build-deploy:
+  stage: build ## The names and order of the pipeline stages.
+  tags: ## List of tags that are used to select a runner.
+    - cicd
+  only:
+    - main
+  before_script: ## Override a set of commands that are executed before job.
+    - whoami
+  script: ## Shell script that is executed by a runner.
+    - echo $CI_PIPELINE_ID
+    - docker build -t next-prac-app:$CI_PIPELINE_ID . # docker image 생성(build,nginx)
+    - docker stop next-app || true
+    - docker rm next-app && echo "success to remove [next-app container]" # docker ps cdcd-test 컨테이너 상태 확인후 다음 진행.
+    - docker run -d -p 3000:3000 --name next-app next-prac-app:$CI_PIPELINE_ID # docker container run
