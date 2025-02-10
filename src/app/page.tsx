@@ -7,5 +7,5 @@ export const metadata: Metadata = {
 
 export default function Home() {
   console.log(process.env);
-  return <h1>/app/page.tsx [Gitlab deploy]</h1>;
+  return <h1>/app/page.tsx [Gitlab deploy] vm test</h1>;
 }
